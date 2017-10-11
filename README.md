@@ -4,7 +4,7 @@
 
 ## Try it
 
-You can test your KPS here [https://www.tongmu.me/kps/](https://www.tongmu.me/kps/)
+You can test your KPS here [https://kps.tongmu.me/](https://kps.tongmu.me/)
 
 ## Build Setup
 
