@@ -21,6 +21,7 @@
       <div id="kps">
         <p id="kps-label">KPS</p>
         <p id="kps-data">{{ currentKPS }}</p>
+        <p id="kps-max">max: {{ maxKPS }}</p>
       </div>
 
       <div id="key-setting">
@@ -99,7 +100,8 @@ export default {
       timedata: [],
       pressData: [],
       startTime: 0,
-      currentKPS: 0
+      currentKPS: 0,
+      maxKPS: 0
     }
   },
   methods: {
@@ -183,6 +185,7 @@ export default {
       this.timedata = []
       this.pressData = []
       this.startTime = 0
+      this.maxKPS = 0
       this.chart.update()
     },
     refresh() {
@@ -200,6 +203,7 @@ export default {
           }
           this.currentKPS = Math.floor(total / length)
         }
+        if (this.currentKPS > this.maxKPS) this.maxKPS = this.currentKPS
         let pressTime = new Date().getTime()
         let dataPos = Math.floor(pressTime / 100) - this.startTime
         while (this.pressData.length <= dataPos) {
