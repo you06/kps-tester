@@ -127,8 +127,15 @@ export default {
         let pos = this.keys.layoutList.indexOf(e.key)
         if (pos < 0) {
           // good key
+          let key = e.key
+          if (key == 'Shift') key = 'S.'
+          else if (key == 'ArrowUp') key = '↑'
+          else if (key == 'ArrowDown') key = '↓'
+          else if (key == 'ArrowLeft') key = '←'
+          else if (key == 'ArrowRight') key = '→'
+          else if (key.length > 1) key = key[0]
           this.keys.layoutList[this.keys.amount - this.keys.settingTodo] = e.key
-          this.keys.layout[this.keys.amount - this.keys.settingTodo].key = e.key
+          this.keys.layout[this.keys.amount - this.keys.settingTodo].key = key
           this.keys.settingTodo--
         }
       }
@@ -329,7 +336,7 @@ export default {
   max-width: 9%;
   height: 80px;
   line-height: 80px;
-  font-size: 25px;
+  font-size: 20px;
   color: transparent;
   border: 1px solid #999;
   display: inline-block;
