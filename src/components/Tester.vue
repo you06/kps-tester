@@ -8,11 +8,11 @@
         :value="item.value">
       </el-option>
     </el-select>
-    <el-button @click="recordBegin">Layout Setting</el-button>
+    <span class="fake-btn fake-btn-default" @click="recordBegin">Layout Setting</span>
     <br>
-    <el-button @click="resetData" id="reset" :plain="true" type="warning">Reset</el-button>
-    <el-button @click="stopRecord" id="stop" :plain="true" type="danger">Stop</el-button>
-    <el-button @click="startRecord" id="start" :plain="true" type="success">Start</el-button>
+    <span class="fake-btn fake-btn-warning" @click="resetData" id="reset">Reset</span>
+    <span class="fake-btn fake-btn-danger" @click="stopRecord" id="stop">Stop</span>
+    <span class="fake-btn fake-btn-success" @click="startRecord" id="start">Start</span>
     <div id="main">
       <div id="chart">
         <canvas id="kps-chart"></canvas>
@@ -350,5 +350,38 @@ export default {
 }
 .key-item.active {
   background-color: #ff5f5f;
+}
+
+.fake-btn {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #c4c4c4;
+  color: #1f2d3d;
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+.fake-btn-default:hover {
+  color: #fff;
+  background-color: #20a0ff;
+  border-color: #20a0ff;
+}
+.fake-btn-warning:hover {
+  color: #fff;
+  background-color: #f7ba2a;
+  border-color: #f7ba2a;
+}
+.fake-btn-danger:hover {
+  color: #fff;
+  background-color: #ff4949;
+  border-color: #ff4949;
+}
+.fake-btn-success:hover {
+  color: #fff;
+  background-color: #13ce66;
+  border-color: #13ce66;
 }
 </style>

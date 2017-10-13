@@ -13,7 +13,7 @@ export default {
   data () {
     return {
       title: 'KPS Tester',
-      prologue: 'How fast can you be'
+      prologue: 'How fast can you spam'
     }
   }
 }
